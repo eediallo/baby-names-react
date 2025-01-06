@@ -16,14 +16,15 @@ export function SearchBar() {
   }
 
   return (
-    <>
+    <div className="search-bar-container">
       <label htmlFor="seach-bar">Search for names: </label>
       <input
         type="text"
+        id="search-bar"
         value={searchItem}
         onChange={(e) => setSearchItem(e.target.value)}
         onInput={handleOnInput}
       />
-    </>
+    </div>
   );
 }

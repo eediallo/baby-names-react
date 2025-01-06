@@ -58,3 +58,29 @@ body {
   background: linear-gradient(to right, #f48fb1, #f8bbd0);
   color: white;
 }
+
+
+.search-bar-container {
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.search-bar-container label {
+  font-size: 1.2rem;
+  font-weight: bold;
+  margin-right: 10px;
+}
+
+.search-bar-container input {
+  padding: 10px 15px;
+  border: 2px solid #f48fb1;
+  border-radius: 10px;
+  font-size: 1rem;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.search-bar-container input:focus {
+  border-color: #42a5f5;
+  box-shadow: 0 0 10px rgba(66, 165, 245, 0.5);
+  outline: none;
+}
