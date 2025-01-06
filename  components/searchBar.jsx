@@ -9,12 +9,9 @@ export function SearchBar() {
     const names = document.querySelectorAll(".name");
     names.forEach((name) => {
       const nameText = name.textContent.toLowerCase();
-      if (nameText.includes(searchItem.toLowerCase())) {
-        name.style.display = "block";
-      } else {
-        name.innerHTML = "No name found!";
-        name.style.display = "none";
-      }
+      nameText.includes(searchItem.toLowerCase())
+        ? (name.style.display = "block")
+        : (name.style.display = "none");
     });
   }
 
