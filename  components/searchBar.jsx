@@ -2,6 +2,22 @@ import { useState } from "react";
 
 export function SearchBar() {
   const [searchItem, setSearchItem] = useState("");
+
+  function handleOnInput(e) {
+    const searchItem = e.target.value;
+    setSearchItem(searchItem);
+    const names = document.querySelectorAll(".name");
+    names.forEach((name) => {
+      const nameText = name.textContent.toLowerCase();
+      if (nameText.includes(searchItem.toLowerCase())) {
+        name.style.display = "block";
+      } else {
+        name.innerHTML = "No name found!";
+        name.style.display = "none";
+      }
+    });
+  }
+
   return (
     <>
       <h1>Search Bar</h1>
@@ -10,6 +26,7 @@ export function SearchBar() {
         type="text"
         value={searchItem}
         onChange={(e) => setSearchItem(e.target.value)}
+        onInput={handleOnInput}
       />
     </>
   );
