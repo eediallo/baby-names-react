@@ -1,5 +1,4 @@
 import { babyNames } from "../data/babyNames.jsx";
-import { SearchBar } from "./searchBar.jsx";
 
 function sortedBabyNames() {
   return babyNames.sort((babyA, babyB) => babyA.name.localeCompare(babyB.name));
@@ -17,11 +16,5 @@ export function RenderBabyNames() {
     );
   });
 
-  return (
-    <>
-      <h1>Baby Name Picker</h1>
-      <SearchBar />
-      <div className="names-container">{babyNameList}</div>
-    </>
-  );
+  return <div className="names-container">{babyNameList}</div>;
 }
