@@ -4,25 +4,22 @@ export function RenderBabyNames() {
   const babyNameList = babyNames.map((babyName) => {
     if (babyName.sex === "f") {
       return (
-        <p
-          className="female"
-          key={babyName.id}
-          style={{ backgroundColor: "pink", color: "red" }}
-        >
+        <p className="female name" key={babyName.id}>
           {babyName.name}
         </p>
       );
     }
     return (
-      <p
-        className="male"
-        key={babyName.id}
-        style={{ backgroundColor: "blue", color: "white" }}
-      >
+      <p className="male name" key={babyName.id}>
         {babyName.name}
       </p>
     );
   });
 
-  return <div>{babyNameList}</div>;
+  return (
+    <>
+      <h1>Baby Names Picker</h1>
+      <div className="names-container">{babyNameList}</div>
+    </>
+  );
 }
