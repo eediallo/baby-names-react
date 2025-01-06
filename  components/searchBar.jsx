@@ -17,7 +17,6 @@ export function SearchBar() {
 
   return (
     <>
-      <h1>Search Bar</h1>
       <label htmlFor="seach-bar">Search for names: </label>
       <input
         type="text"
