@@ -4,7 +4,7 @@ export function RenderBabyNames() {
   const babyNameList = babyNames.map((babyName) => {
     return (
       <p
-        className={babyName.sex === "f" ? "male name" : "female name"}
+        className={babyName.sex === "f" ? "female name" : "male name"}
         key={babyName.id}
       >
         {babyName.name}
