@@ -36,10 +36,6 @@ body {
 }
 
 
-.name:nth-child(odd) {
-  background-color: #ffd6e0;
-}
-
 .male{
   background-color: blue;
   color: white;
