@@ -1,7 +1,17 @@
 import PropTypes from "prop-types";
-import { useState } from "react"
+import { useState } from "react";
 
 export function BabyNames({ babyNames }) {
+  let [favorites, setFavorites] = useState([]);
+  let [favoriteItem, setFavoriteItem] = useState("");
+
+  function handleOnClick() {
+    babyNames.forEach((babyName) => {
+      favorites.push(babyName);
+    });
+    console.log(favorites);
+  }
+
   function sortedBabyNames() {
     return babyNames.sort((babyA, babyB) =>
       babyA.name.localeCompare(babyB.name)
@@ -10,16 +20,13 @@ export function BabyNames({ babyNames }) {
 
   return sortedBabyNames().map((babyName) => {
     return (
-      <>
-        <button>
-          <p
-            className={babyName.sex === "f" ? "female name" : "male name"}
-            key={babyName.id}
-          >
+      <div key={babyName.id}>
+        <button onClick={handleOnClick}>
+          <p className={babyName.sex === "f" ? "female name" : "male name"}>
             {babyName.name}
           </p>
         </button>
-      </>
+      </div>
     );
   });
 }
