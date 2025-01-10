@@ -12,7 +12,12 @@ export function BabyNames({ babyNames }) {
 
   function handleMoveToNamesClick(name) {
     setFavorites(favorites.filter((favoriteName) => favoriteName !== name));
-    setNames((prvNames) => [...prvNames, name]);
+    setNames((prvNames) => {
+      const index = babyNames.findIndex((baby) => baby.id === name.id);
+      const newNames = [...prvNames];
+      newNames.splice(index, 0, name);
+      return newNames;
+    });
   }
 
   useEffect(() => {
