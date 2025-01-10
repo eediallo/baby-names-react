@@ -1,7 +1,7 @@
 import { useState } from "react";
 
 export function SearchBar() {
-  const [searchItem, setSearchItem] = useState("");
+  let [searchItem, setSearchItem] = useState("");
 
   function handleOnInput(e) {
     const searchItem = e.target.value;
