@@ -4,7 +4,7 @@ export function SearchBar() {
   let [searchItem, setSearchItem] = useState("");
 
   function handleOnInput(e) {
-    const searchItem = e.target.value;
+    searchItem = e.target.value;
     setSearchItem(searchItem);
     const names = document.querySelectorAll(".name");
     names.forEach((name) => {
