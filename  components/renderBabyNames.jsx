@@ -28,11 +28,11 @@ export function BabyNames({ babyNames }) {
 
   const favoritesList = favorites.map((favorite) => {
     return (
-      <>
+      <div key={favorite.name}>
         <button>
-          <p key={favorite.name}>{favorite.name}</p>
+          <p>{favorite.name}</p>
         </button>
-      </>
+      </div>
     );
   });
 
