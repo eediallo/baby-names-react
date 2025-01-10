@@ -1,4 +1,4 @@
-import { BabyNames } from "../ components/renderBabyNames.jsx";
+import { BabyNames } from "../components/renderBabyNames.jsx";
 import { babyNames } from "../data/babyNames.jsx";
 import { useState } from "react";
 
@@ -6,18 +6,21 @@ import "./App.css";
 
 function App() {
   let [searchItem, setSearchItem] = useState("");
-  let [filteredBabyNames, setfilteredBabyNames] = useState(babyNames);
+  // sort in ascending order initially
+  let [filteredBabyNames, setfilteredBabyNames] = useState(
+    babyNames.sort((a, b) => a.name.localeCompare(b.name))
+  );
 
   function handleOnInput(e) {
-    searchItem = e.target.value;
-    setSearchItem(searchItem);
+    const searchValue = e.target.value.toLowerCase();
+    setSearchItem(searchValue);
 
-    filteredBabyNames = babyNames.filter((babyName) => {
+    const filteredNames = babyNames.filter((babyName) => {
       const name = babyName.name.toLowerCase();
-      return name.includes(searchItem);
+      return name.includes(searchValue);
     });
 
-    setfilteredBabyNames(filteredBabyNames);
+    setfilteredBabyNames(filteredNames);
   }
 
   return (
@@ -30,8 +33,7 @@ function App() {
           type="text"
           id="search-bar"
           value={searchItem}
-          onChange={(e) => setSearchItem(e.target.value)}
-          onInput={handleOnInput}
+          onChange={handleOnInput}
           placeholder="Search for a name"
         />
       </div>
