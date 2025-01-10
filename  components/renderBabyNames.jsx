@@ -1,4 +1,5 @@
 import PropTypes from "prop-types";
+import { useState } from "react"
 
 export function BabyNames({ babyNames }) {
   function sortedBabyNames() {
@@ -9,12 +10,16 @@ export function BabyNames({ babyNames }) {
 
   return sortedBabyNames().map((babyName) => {
     return (
-      <p
-        className={babyName.sex === "f" ? "female name" : "male name"}
-        key={babyName.id}
-      >
-        {babyName.name}
-      </p>
+      <>
+        <button>
+          <p
+            className={babyName.sex === "f" ? "female name" : "male name"}
+            key={babyName.id}
+          >
+            {babyName.name}
+          </p>
+        </button>
+      </>
     );
   });
 }
