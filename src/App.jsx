@@ -35,10 +35,7 @@ function App() {
           placeholder="Search for a name"
         />
       </div>
-
-      <div className="names-container">
-        <BabyNames babyNames={filteredBabyNames} />
-      </div>
+      <BabyNames babyNames={filteredBabyNames} />
     </>
   );
 }
