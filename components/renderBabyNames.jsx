@@ -40,7 +40,13 @@ export function BabyNames({ babyNames }) {
     return (
       <div key={favorite.name}>
         <button onClick={() => handleMoveToNamesClick(favorite)}>
-          <p>{favorite.name}</p>
+          <p
+            className={
+              favorite.sex === "f" ? "female favorite" : "male favorite"
+            }
+          >
+            {favorite.name}
+          </p>
         </button>
       </div>
     );
@@ -49,8 +55,10 @@ export function BabyNames({ babyNames }) {
   return (
     <div>
       <div>
-        <h1>Favorites:</h1>
-        <div className="favorites-container">{favoritesList}</div>
+        <div className="favorites-container">
+          <h1>Favorites: </h1>
+          <div className="favorites">{favoritesList}</div>
+        </div>
       </div>
       <div className="names-container">{namesList}</div>
     </div>
