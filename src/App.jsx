@@ -1,5 +1,7 @@
 import { RenderBabyNames } from "../ components/renderBabyNames.jsx";
 import { SearchBar } from "../ components/searchBar.jsx";
+import { babyNames } from "../data/babyNames.jsx";
+
 import "./App.css";
 
 function App() {
@@ -7,7 +9,9 @@ function App() {
     <>
       <h1>Baby Name Picker</h1>
       <SearchBar />
-      <RenderBabyNames />
+      <div className="names-container">
+        <RenderBabyNames babyNames={babyNames} />
+      </div>
     </>
   );
 }
