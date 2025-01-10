@@ -1,4 +1,4 @@
-import { RenderBabyNames } from "../ components/renderBabyNames.jsx";
+import { BabyNames } from "../ components/renderBabyNames.jsx";
 import { SearchBar } from "../ components/searchBar.jsx";
 import { babyNames } from "../data/babyNames.jsx";
 
@@ -10,7 +10,7 @@ function App() {
       <h1>Baby Name Picker</h1>
       <SearchBar />
       <div className="names-container">
-        <RenderBabyNames babyNames={babyNames} />
+        <BabyNames babyNames={babyNames} />
       </div>
     </>
   );

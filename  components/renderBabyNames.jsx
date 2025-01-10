@@ -1,4 +1,4 @@
-export function RenderBabyNames({ babyNames }) {
+export function BabyNames({ babyNames }) {
   function sortedBabyNames() {
     return babyNames.sort((babyA, babyB) =>
       babyA.name.localeCompare(babyB.name)
