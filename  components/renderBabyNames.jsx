@@ -3,13 +3,9 @@ import { useState } from "react";
 
 export function BabyNames({ babyNames }) {
   let [favorites, setFavorites] = useState([]);
-  let [favoriteItem, setFavoriteItem] = useState("");
 
-  function handleOnClick() {
-    babyNames.forEach((babyName) => {
-      favorites.push(babyName);
-    });
-    console.log(favorites);
+  function handleClick(babyName) {
+    setFavorites((prvFavorites) => [...prvFavorites, babyName]);
   }
 
   function sortedBabyNames() {
@@ -18,17 +14,40 @@ export function BabyNames({ babyNames }) {
     );
   }
 
-  return sortedBabyNames().map((babyName) => {
+  const namesList = sortedBabyNames().map((babyName) => {
     return (
-      <div key={babyName.id}>
-        <button onClick={handleOnClick}>
-          <p className={babyName.sex === "f" ? "female name" : "male name"}>
+      <>
+        <button onClick={() => handleClick(babyName)}>
+          <p
+            key={babyName.id}
+            className={babyName.sex === "f" ? "female name" : "male name"}
+          >
             {babyName.name}
           </p>
         </button>
-      </div>
+      </>
     );
   });
+
+  const favoritesList = favorites.map((favorite) => {
+    return (
+      <>
+        <button>
+          <p key={favorite.name}>{favorite.name}</p>
+        </button>
+      </>
+    );
+  });
+
+  return (
+    <>
+      <div>
+        <h1>Favorites:</h1>
+        <div className="favorites-container">{favoritesList}</div>
+      </div>
+      <div className="names-container">{namesList}</div>
+    </>
+  );
 }
 
 BabyNames.propTypes = {
