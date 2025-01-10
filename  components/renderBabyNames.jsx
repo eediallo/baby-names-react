@@ -1,11 +1,11 @@
-import { babyNames } from "../data/babyNames.jsx";
+export function RenderBabyNames({ babyNames }) {
+  function sortedBabyNames() {
+    return babyNames.sort((babyA, babyB) =>
+      babyA.name.localeCompare(babyB.name)
+    );
+  }
 
-function sortedBabyNames() {
-  return babyNames.sort((babyA, babyB) => babyA.name.localeCompare(babyB.name));
-}
-
-export function RenderBabyNames() {
-  const babyNameList = sortedBabyNames().map((babyName) => {
+  return sortedBabyNames().map((babyName) => {
     return (
       <p
         className={babyName.sex === "f" ? "female name" : "male name"}
@@ -15,6 +15,4 @@ export function RenderBabyNames() {
       </p>
     );
   });
-
-  return <div className="names-container">{babyNameList}</div>;
 }
