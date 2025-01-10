@@ -1,3 +1,5 @@
+import PropTypes from "prop-types";
+
 export function BabyNames({ babyNames }) {
   function sortedBabyNames() {
     return babyNames.sort((babyA, babyB) =>
@@ -16,3 +18,7 @@ export function BabyNames({ babyNames }) {
     );
   });
 }
+
+BabyNames.propTypes = {
+  babyNames: PropTypes.array.isRequired,
+};
