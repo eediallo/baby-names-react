@@ -16,16 +16,13 @@ export function BabyNames({ babyNames }) {
 
   const namesList = sortedBabyNames().map((babyName) => {
     return (
-      <>
+      <div key={babyName.id}>
         <button onClick={() => handleClick(babyName)}>
-          <p
-            key={babyName.id}
-            className={babyName.sex === "f" ? "female name" : "male name"}
-          >
+          <p className={babyName.sex === "f" ? "female name" : "male name"}>
             {babyName.name}
           </p>
         </button>
-      </>
+      </div>
     );
   });
 
@@ -40,13 +37,13 @@ export function BabyNames({ babyNames }) {
   });
 
   return (
-    <>
+    <div>
       <div>
         <h1>Favorites:</h1>
         <div className="favorites-container">{favoritesList}</div>
       </div>
       <div className="names-container">{namesList}</div>
-    </>
+    </div>
   );
 }
 
