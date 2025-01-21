@@ -1,10 +1,10 @@
 import BabyName from "./BabyName";
 import PropTypes from "prop-types";
 
-export default function BabyNames({ names, favorites, setNames }) {
+export default function BabyNames({ names, setFavorites, setNames }) {
   function handleMoveToFavoritesClick(babyName) {
     setNames(names.filter((name) => name !== babyName));
-    favorites((prvFavorites) => [...prvFavorites, babyName]);
+    setFavorites((prvFavorites) => [...prvFavorites, babyName]);
   }
 
   return (
@@ -23,5 +23,5 @@ export default function BabyNames({ names, favorites, setNames }) {
 BabyNames.propTypes = {
   names: PropTypes.array.isRequired,
   setNames: PropTypes.func.isRequired,
-  favorites: PropTypes.array.isRequired,
+  setFavorites: PropTypes.func.isRequired,
 };

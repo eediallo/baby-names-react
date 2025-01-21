@@ -19,7 +19,11 @@ export function Babies({ babyNames }) {
         setNames={setNames}
         babyNames={babyNames}
       />
-      <BabyNames names={names} favorites={setFavorites} setNames={setNames} />
+      <BabyNames
+        names={names}
+        setFavorites={setFavorites}
+        setNames={setNames}
+      />
     </>
   );
 }
