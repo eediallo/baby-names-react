@@ -12,7 +12,6 @@ function App() {
   return (
     <>
       <h1>Baby Name Picker</h1>
-      <label htmlFor="seach-bar"></label>
       <SearchBar setfilteredBabyNames={setfilteredBabyNames} />
       <BabyNames babyNames={filteredBabyNames} />
     </>
