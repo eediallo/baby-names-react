@@ -17,6 +17,7 @@ export default function SearchBar({ setfilteredBabyNames }) {
   }
   return (
     <div className="search-bar-container">
+      <label htmlFor="seach-bar"></label>
       <input
         type="text"
         id="search-bar"
