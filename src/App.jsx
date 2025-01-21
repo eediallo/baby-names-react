@@ -1,4 +1,4 @@
-import { Babies } from "../components/renderBabyNames.jsx";
+import { Babies } from "../components/Babies.jsx";
 import SearchBar from "../components/SearchBar.jsx";
 import { babyNames } from "../data/babyNames.jsx";
 import { useState } from "react";
