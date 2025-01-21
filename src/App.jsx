@@ -3,6 +3,7 @@ import SearchBar from "../components/SearchBar.jsx";
 import { babyNames } from "../data/babyNames.jsx";
 import { useState } from "react";
 import "./App.css";
+import Header from "../components/Header.jsx";
 
 function App() {
   let [filteredBabyNames, setfilteredBabyNames] = useState(
@@ -11,7 +12,7 @@ function App() {
 
   return (
     <>
-      <h1>Baby Name Picker</h1>
+      <Header />
       <SearchBar setfilteredBabyNames={setfilteredBabyNames} />
       <BabyNames babyNames={filteredBabyNames} />
     </>
