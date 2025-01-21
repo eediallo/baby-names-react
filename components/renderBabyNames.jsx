@@ -1,6 +1,7 @@
 import PropTypes from "prop-types";
 import { useEffect, useState } from "react";
 import BabyName from "./BabyName";
+import Favorite from "./Favorite";
 
 export function BabyNames({ babyNames }) {
   let [favorites, setFavorites] = useState([]);
@@ -33,21 +34,13 @@ export function BabyNames({ babyNames }) {
     />
   ));
 
-  const favoritesList = favorites.map((favorite) => {
-    return (
-      <div key={favorite.name}>
-        <button onClick={() => handleMoveToNamesClick(favorite)}>
-          <p
-            className={
-              favorite.sex === "f" ? "female favorite" : "male favorite"
-            }
-          >
-            {favorite.name}
-          </p>
-        </button>
-      </div>
-    );
-  });
+  const favoritesList = favorites.map((favorite) => (
+    <Favorite
+      onSelect={() => handleMoveToNamesClick(favorite)}
+      key={favorite.id}
+      {...favorite}
+    />
+  ));
 
   return (
     <div>
