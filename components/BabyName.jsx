@@ -12,5 +12,5 @@ BabyName.propTypes = {
   sex: PropTypes.string.isRequired,
   name: PropTypes.string.isRequired,
   onSelect: PropTypes.func.isRequired,
-  babyName: PropTypes.object.isRequired,
+  babyName: PropTypes.object.onClick,
 };
